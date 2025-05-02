@@ -10,13 +10,16 @@ import java.util.List;
 @RestController
 @RequestMapping("/todos")
 public class TodoController {
-
     private long todosLastId;
-
     private List<Todo> todos;
 
-    public TodoController(){
+    public TodoController() {
         todos = new ArrayList<>();
+    }
+
+    @GetMapping("")
+    public List<Todo> getTodos() {
+        return todos;
     }
 
     @GetMapping("/add")
